@@ -1,0 +1,22 @@
+services:
+  vscodium:
+    image: ghcr.io/linuxserver/vscodium:latest
+    container_name: vscodium
+    cap_add:
+      - IPC_LOCK
+    # security_opt:
+    #   - seccomp:unconfined #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Rome
+    volumes:
+      - config:/config
+    ports:
+      - ${KASMVNC_PORT}:3000
+    shm_size: "1gb"
+    restart: unless-stopped
+volumes:
+  config:
+    external: true
+    name: "${VSCODIUM_CONFIG}"

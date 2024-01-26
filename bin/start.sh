@@ -12,3 +12,4 @@ docker volume inspect "${VSCODIUM_CONFIG}"
 
 docker compose up -d
 echo "Open vscodium URL: http://localhost:${KASMVNC_PORT}"
+echo "Or use host X11 server: docker exec -e DISPLAY -it vscodium su abc -c codium"

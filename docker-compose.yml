@@ -12,6 +12,7 @@ services:
       - TZ=Europe/Rome
     volumes:
       - config:/config
+      - /tmp/.X11-unix/X0:/tmp/.X11-unix/X0
     ports:
       - ${KASMVNC_PORT}:3000
     shm_size: "1gb"

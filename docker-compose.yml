@@ -16,7 +16,6 @@ services:
     ports:
       - ${KASMVNC_PORT}:3000
     shm_size: "1gb"
-    restart: unless-stopped
 volumes:
   config:
     external: true
